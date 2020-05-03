@@ -39,19 +39,7 @@ fig = px.bar(neighbourhood_price[['neighbourhood', 'price/night']].sort_values('
              template = 'ggplot2', title = 'neighbourhood vs price/night')
 plot(fig)
 
+df.to_csv('cleaned_data_final.csv', index = False)
 
 
-
-"""df_dum = pd.get_dummies(df)
-X = df_dum.drop('price/night', axis = 1)
-y = df_dum.iloc[:,3].values
-
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.05)
-
-import statsmodels.api as sm
-X_sm = X = sm.add_constant(X)
-model = sm.OLS(y, X_sm)
-model.fit().summary()
-"""
 
